@@ -3,9 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http.response import HttpResponse
 from django.views import generic
 
-
 from .templates import recived_message
-
 
 import requests
 import json
@@ -25,7 +23,6 @@ class BotView(generic.View):
 
 
 	def post(self, request, *args, **kwargs):
-
 
 		incoming_message = json.loads(self.request.body.decode('utf-8'))
 		for entry in incoming_message['entry']:

@@ -1,0 +1,185 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+
+	    <title>Autores-Posts</title>
+	    <!-- Web Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300' rel='stylesheet' type='text/css'>
+	    <!-- Flaticon CSS -->
+	    <link href="{% static 'fonts/flaticon/flaticon.css' %}" rel="stylesheet">
+	    <!-- font-awesome CSS -->
+	    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+	    <!-- Offcanvas CSS -->
+	    <link href="{% static 'css/hippo-off-canvas.css' %}" rel="stylesheet">
+	    <!-- animate CSS -->
+	    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+	    <!-- owl.carousel CSS -->
+	    <link href="{% static 'css/owl.theme.css' %}" rel="stylesheet">
+	    <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
+	    <!-- Bootstrap Core CSS -->
+	    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	    <!-- Custom CSS -->
+	    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+	    <!-- Responsive CSS -->
+	    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+	    <script src="{% static 'js/vendor/modernizr-2.8.1.min.js' %}"></script>
+
+        {% block extracss %}
+        {% endblock extracss %}
+	</head>
+
+
+<body id="page-top" data-spy="scroll"  data-target=".navbar">
+
+  <div id="st-container" class="st-container">
+    <div class="st-pusher">
+        <div class="st-content">
+            <div class="st-content-inner">
+
+			  	<header class="header">
+                    {% include 'header.html' %}
+				</header>
+
+                <!-- slider content -->
+                <div id="x-corp-carousel" class="carousel slide hero-slide" data-ride="carousel">
+				    <!-- Indicators -->
+				    <ol class="carousel-indicators">
+				        <li data-target="#x-corp-carousel" data-slide-to="0" class="active"></li>
+				        <li data-target="#x-corp-carousel" data-slide-to="1"></li>
+				    </ol>
+
+				    <!-- Wrapper for slides -->
+				    <div class="carousel-inner" role="listbox">
+				        <div class="item active">
+				            <img src="{% static 'img/slider/slide-1.jpg' %}" alt="Hero Slide">
+				            <!--Slide Image-->
+
+				            <div class="container">
+				                <div class="carousel-caption">
+				                    <h1 class="animated lightSpeedIn">Creative Ideas &amp; Solutions</h1>
+
+				                    <p class="lead animated lightSpeedIn">Energistically benchmark resource maximizing catalysts for change with <br> enterprise collaboration and idea-sharing. Dramatically evisculate.</p>
+
+				                    <a class="btn btn-default animated lightSpeedIn" href="#">Get Started</a>
+				                </div>
+				                <!--.carousel-caption-->
+				            </div>
+				            <!--.container-->
+				        </div>
+				        <!--.item-->
+
+				        <div class="item">
+				            <img src="{% static 'img/slider/slide-2.jpg' %}" alt="Hero Slide">
+				            <!--Slide Image-->
+
+				            <div class="container">
+				                <div class="carousel-caption">
+
+				                    <h1 class="animated bounceIn">Clean &amp; Fresh Design</h1>
+
+				                    <p class="lead animated bounceIn">Energistically benchmark resource maximizing catalysts for change with <br> enterprise collaboration and idea-sharing. Dramatically evisculate.</p>
+				                    <a class="btn btn-default animated bounceIn" href="#">Work With Us Today</a>
+				                </div>
+				                <!--.carousel-caption-->
+				            </div>
+				            <!--.container-->
+				        </div>
+				        <!--.item-->
+				    </div>
+				    <!--.carousel-inner-->
+
+				    <!-- Controls -->
+				    <a class="left carousel-control" href="#x-corp-carousel" role="button" data-slide="prev">
+				        <i class="fa fa-angle-left" aria-hidden="true"></i>
+				        <span class="sr-only">Previous</span>
+				    </a>
+				    <a class="right carousel-control" href="#x-corp-carousel" role="button" data-slide="next">
+				        <i class="fa fa-angle-right" aria-hidden="true"></i>
+				        <span class="sr-only">Next</span>
+				    </a>
+				</div>
+                 <!-- /end slider section -->
+
+                {% block content %}
+                    <!-- CONTENIDO DE LAS PAGINAS HIJAS -->
+                {% endblock content %}
+
+		        <!-- footer start -->
+				<footer id="contact" class="footer-widget-wrapper">
+                    {% include 'footer.html' %}
+				</footer>
+				<!-- footer end -->
+        </div>
+    </div>
+    </div>
+
+
+    	<!-- OFFCANVAS MENU -->
+    	<div class="offcanvas-menu offcanvas-effect visible-xs">
+	        <button type="button" class="close" aria-hidden="true" data-toggle="offcanvas" id="off-canvas-close-btn">&times;</button>
+	        <h3>Sidebar Menu</h3>
+	        <ul class="list-unstyled">
+	            <li class="active"><a class="offcanvas-link" href="#page-top">Home<span class="sr-only">(current)</span></a></li>
+	            <li><a class="offcanvas-link" href="#services">Services</a></li>
+	            <li><a class="offcanvas-link" href="#work">Works</a></li>
+	            <li><a class="offcanvas-link" href="#about">About</a></li>
+	            <li><a class="offcanvas-link" href="#blog">Blog</a></li>
+	            <li><a class="offcanvas-link" href="#contact">Contact</a></li>
+	        </ul>
+      	</div><!-- .offcanvas-menu -->
+	</div><!-- /st-container -->
+
+
+		<!-- Preloader -->
+		<div id="preloader">
+			<div id="status">
+				<div class="status-mes"></div>
+			</div>
+		</div>
+
+
+	    <!-- jQuery -->
+	    <script src="{% static 'js/jquery.js' %}"></script>
+	    <!-- Bootstrap Core JavaScript -->
+	    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+	    <!-- wow.min.js -->
+	    <script src="{% static 'js/wow.min.js' %}"></script>
+	    <!-- smoothscroll -->
+	    <script src="{% static 'js/smoothscroll.js' %}"></script>
+	    <!-- twitterFetcher_min -->
+	    <script src="{% static 'js/twitterFetcher_min.js' %}"></script>
+	    <!-- owl.carousel -->
+	    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+		<!-- Offcanvas Menu -->
+		<script src="{% static 'js/hippo-offcanvas.js' %}"></script>
+		<!-- inview -->
+		<script src="{% static 'js/jquery.inview.min.js' %}"></script>
+		<!-- stellar -->
+		<script src="{% static 'js/jquery.stellar.js' %}"></script>
+		<!-- countTo -->
+		<script src="{% static 'js/jquery.countTo.js' %}"></script>
+	    <!-- Scrolling Nav JavaScript -->
+	    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+		<!-- flickerPhoto -->
+		<script src="{% static 'js/flickerPhoto.min.js' %}"></script>
+		<!-- Shuffle.min js -->
+		<script src="{% static 'js/jquery.shuffle.min.js' %}"></script>
+	    <!-- GOGLE MAP -->
+	    <script src="{% static 'https://maps.googleapis.com/maps/api/js' %}"></script>
+	    <!-- Custom Script -->
+		<script src="{% static 'js/scripts.js' %}"></script>
+		
+		{% block extrajs %}
+			
+		{% endblock extrajs %}
+	</body>
+</html>

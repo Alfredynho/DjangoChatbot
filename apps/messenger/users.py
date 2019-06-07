@@ -9,12 +9,9 @@ from django.utils import timezone
 
 from apps.messenger.models import MessengerUser
 
-
 def userfb(sender_id):
 	res = requests.get('https://graph.facebook.com/v2.6/' + sender_id,
 					params = {'access_token': settings.FB_PAGE_ACCESS_TOKEN } )
-
-
 
 	data = json.loads(res.text)
 	return data

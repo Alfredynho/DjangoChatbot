@@ -1,8 +1,10 @@
-
 import os
+from os.path import join, dirname
+
+PROJECT_PATH = dirname(dirname(dirname(__file__)))
+APPS_PATH = join(PROJECT_PATH, "apps")
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 SECRET_KEY = 'h#srg0%!#)fdct779*0e7kzich#qaq-4c&0k25#2%4w(gz20u8'
 
@@ -21,6 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.messenger',
+    'apps.author',
 ]
 
 MIDDLEWARE = [
@@ -38,7 +41,7 @@ ROOT_URLCONF = 'chatbot.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,  'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,11 +68,14 @@ DATABASES = {
 }
 
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 
 # Configuraciones del Chatbot
 
 CLIENT_ACCESS_TOKEN_DIALOG_FLOW = "c004deae54af4395be77391236c6e6cc"
-FB_PAGE_ACCESS_TOKEN = "EAAJcOOCrpCMBAFotQRJDJvaZAwgCr9REtQKPB5wqMZCOgYuZAlup7CVZCkhVD1t97YLMkEYa2gf1MdWUGq4AjzzOsZCBmVcVG0DiXpjeGkp18HsDVDZAH8SAnLLnci1Oqq6oediiDZAKWZCqP244ZAmqb4q0vZCBrLELNO6ZA7wHfrKqCl2HfwKYZCay"
+FB_PAGE_ACCESS_TOKEN = "EAADRuExI5U0BAMnCzSydhAZCWDvNlrczX9DHdZCCwbcewtNmOvjtpuO0qxVLKMFVpFEh28b9d4LigYZCn8L6YBJsrliIKULrVkzCEzZAcB4KtbMoUy97Pba8jLPmeXUiNYB4xzNZAZCiWY6jHonG33zxVx5OnXKq5ooG4MwzZBjopPM8GxJZB9Lm"
 
 
 # Password validation
@@ -108,7 +114,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.10/howto/static-files/
+STATIC_ROOT = os.path.join(BASE_DIR, 'public/static')
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
 
 
 # Config Constance for Project Chatbot

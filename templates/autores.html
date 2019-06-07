@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+<!-- Blog Homepage-->
+<section id="blog" class="blog-section section-padding">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-xs-12">
+                <h2 class="section-title wow zoomIn">Blog Post</h2>
+            </div>
+        </div>
+
+        <div class="row content-row">
+            {% for autor in autores %}
+            <div class="col-sm-6 col-md-4">
+                <article class="blog-post-wrapper">
+                    <header class="entry-header">
+                        <h2 class="entry-title"><a href="blog-single.html">{{ autor.first_name }} {{ autor.last_name }}</a></h2>
+                    </header>
+
+                    <div>
+                        <img src="{{ autor.photo.url }}" width=200 height=200 class="img-responsive" alt="">
+
+                        <div class="entry-footer clearfix">
+                            <ul class="list-inline pull-left">
+                                <li><span class="the-comments" > <a href="#"><i class="fa fa-comment"></i> 11</a></span></li>
+                                <li><span class="the-like" > <a href="#"><i class="fa fa-heart"></i> 30</a></span></li>
+                            </ul>
+
+                            <a class="readmore pull-right" href="{% url 'author:author-detail' autor.id %}"><i class="fa fa-plus"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            {% empty %}
+                <h2 class="section-title wow zoomIn">Sin registros</h2>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- Blog end -->
+
+{% endblock content %}
